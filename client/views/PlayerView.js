@@ -9,7 +9,7 @@ var PlayerView = Backbone.View.extend({
     //ended is an event for video and audio
     events: {
       'ended':function(){
-        console.log("ended!");
+        //console.log("ended!");
         this.model.ended();
       }
     },

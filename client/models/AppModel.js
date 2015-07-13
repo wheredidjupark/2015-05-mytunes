@@ -30,12 +30,16 @@ var AppModel = Backbone.Model.extend({
             console.log(JSON.stringify(this.get('songQueue').toJSON()));
 
 
+
         }, this); //the context is the app, which has access to currentSong and songQueue
 
         params.library.on('ended', function(song) {
-//it's working!!!!!!!!
-          this.get('songQueue').remove(song);
-          this.set('currentSong', this.get('songQueue').at(0));
+            //it's working
+
+            //this.get('songQueue').remove(song);
+            this.get('songQueue').at(0).dequeue();
+            this.set('currentSong', this.get('songQueue').at(0));
+
 
 
             //this.get('songQueue');
